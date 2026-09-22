@@ -1,0 +1,139 @@
+/* ============================================================
+   ESTILOS DO QUIZ - "Qual serviço é ideal para o seu pet?"
+   Classes prefixadas com "quiz-" para não colidir com o
+   styles.css já existente no projeto.
+   Ajuste as cores (--quiz-primary etc.) para bater com a
+   paleta do restante do site.
+   ============================================================ */
+
+#quiz {
+  padding: 64px 0;
+  background: #fef6f0; /* tom pastel suave, ajuste se necessário */
+}
+
+#quiz .container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+#quiz h2 {
+  margin-bottom: 8px;
+}
+
+#quiz .subtitle {
+  margin-bottom: 32px;
+  opacity: 0.8;
+}
+
+.quiz-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+/* Barra de progresso */
+.quiz-progress {
+  width: 100%;
+  height: 8px;
+  background: #f0e4dc;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.quiz-progress-bar {
+  height: 100%;
+  width: 25%;
+  background: #ff8a5c; /* cor de destaque, ajuste conforme a marca */
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.quiz-step-count {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  margin-bottom: 24px;
+}
+
+.quiz-step h3 {
+  margin-bottom: 16px;
+  font-size: 1.15rem;
+}
+
+.quiz-options {
+  display: grid;
+  gap: 12px;
+}
+
+.quiz-option {
+  text-align: left;
+  padding: 14px 16px;
+  border: 2px solid #eee0d8;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.1s ease;
+}
+
+.quiz-option:hover {
+  border-color: #ff8a5c;
+  background: #fff6f1;
+}
+
+.quiz-option.selected {
+  border-color: #ff8a5c;
+  background: #ffe9de;
+  font-weight: 600;
+}
+
+.quiz-option:active {
+  transform: scale(0.99);
+}
+
+/* Resultado */
+.quiz-result {
+  text-align: center;
+}
+
+.quiz-result-icon {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.quiz-result h3 {
+  margin-bottom: 8px;
+}
+
+#quizResultText {
+  margin-bottom: 24px;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.quiz-result-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.quiz-restart {
+  background: transparent;
+  border: 2px solid #ddd;
+  color: inherit;
+}
+
+.quiz-restart:hover {
+  border-color: #ff8a5c;
+}
+
+@media (max-width: 480px) {
+  .quiz-box {
+    padding: 24px 16px;
+  }
+}

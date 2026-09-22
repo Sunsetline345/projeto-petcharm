@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Consulte raças de cães e encontre o companheiro ideal para adoção na PetCharm." />
+  <title>Adoção de cães | PetCharm</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="adocao.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav">
+      <a class="logo" href="../index.html">🐶 PetCharm</a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <ul id="menu">
+        <li><a href="../index.html#inicio">Início</a></li>
+        <li><a href="../index.html#servicos">Serviços</a></li>
+        <li><a href="../Produtos/Produtos.html">Produtos</a></li>
+        <li><a href="../index.html#sobre">Sobre</a></li>
+        <li><a href="#adocao">Adoção</a></li>
+        <li><a href="../index.html#contato">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="adoption-hero" id="adocao">
+      <div class="container">
+        <p class="eyebrow">Adoção responsável</p>
+        <h1>Encontre uma raça que combine com sua família</h1>
+        <p>Pesquise por nome, compare características e conheça melhor cada perfil antes de adotar.</p>
+      </div>
+    </section>
+
+    <section class="adoption-panel">
+      <div class="container">
+        <div class="search-layout">
+          <div class="search-box">
+            <label for="buscaRaca">Pesquisar raça</label>
+            <input id="buscaRaca" name="buscaRaca" type="search" list="sugestoesRacas" placeholder="Ex.: Labrador" autocomplete="off" />
+            <datalist id="sugestoesRacas"></datalist>
+            <small>Digite pelo menos 2 letras para receber sugestões.</small>
+          </div>
+          <div class="select-box">
+            <label for="seletorRaca">Raças disponíveis</label>
+            <select id="seletorRaca" disabled>
+              <option value="">Carregando raças...</option>
+            </select>
+          </div>
+          <button class="btn primary search-button" id="botaoBuscar" type="button">Pesquisar</button>
+        </div>
+
+        <div id="mensagemStatus" class="status-message" role="status" aria-live="polite"></div>
+        <div id="resultadoRaca" class="breed-result" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="ano"></span> PetCharm - Banho &amp; Tosa — Todos os direitos reservados.</p>
+    <p>Projeto educacional do curso de Web Design.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script src="adocao.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos | PetCharm</title>
+    <link rel="stylesheet" href="quiz-produtos.css" />
+    <link rel="stylesheet" href="produtos.css" />
+    
+</head>
+<body>
+<header class="produtos-header">
+  <a class="produtos-logo" href="../index.html">🐶 PetCharm</a>
+  <a class="voltar-site" href="../index.html">Voltar ao site</a>
+</header>
+    <section id="quiz-produtos">
+  <div class="container">
+    <h2>Qual produto é ideal para o seu pet?</h2>
+    <p class="subtitle">Responda 4 perguntinhas rápidas e receba uma recomendação personalizada</p>
+
+    <div class="quizp-box" id="quizpBox">
+
+      <!-- Barra de progresso -->
+      <div class="quizp-progress">
+        <div class="quizp-progress-bar" id="quizpProgressBar"></div>
+      </div>
+      <p class="quizp-step-count" id="quizpStepCount">Pergunta 1 de 4</p>
+
+      <!-- Pergunta 1 -->
+      <div class="quizp-step" data-step="1">
+        <h3>1. Qual é a necessidade principal do seu pet agora?</h3>
+        <div class="quizp-options" data-question="1">
+          <button type="button" class="quizp-option" data-scores='{"racao":2}'>Alimentação — comer bem</button>
+          <button type="button" class="quizp-option" data-scores='{"brinquedos":2}'>Diversão e estímulo</button>
+          <button type="button" class="quizp-option" data-scores='{"remedios":2}'>Saúde ou tratamento</button>
+          <button type="button" class="quizp-option" data-scores='{"trajes":2}'>Vestuário ou proteção</button>
+        </div>
+      </div>
+
+      <!-- Pergunta 2 -->
+      <div class="quizp-step" data-step="2" hidden>
+        <h3>2. Como você descreveria o momento do seu pet?</h3>
+        <div class="quizp-options" data-question="2">
+          <button type="button" class="quizp-option" data-scores='{"racao":2}'>A ração está acabando ou ele precisa de uma dieta melhor</button>
+          <button type="button" class="quizp-option" data-scores='{"brinquedos":2}'>Ele está entediado ou destruindo coisas em casa</button>
+          <button type="button" class="quizp-option" data-scores='{"remedios":2}'>Está com sintomas (coceira, mancando, vômito) ou precisa de prevenção</button>
+          <button type="button" class="quizp-option" data-scores='{"trajes":2}'>Vai sair em dia frio, evento ou passeio</button>
+        </div>
+      </div>
+
+      <!-- Pergunta 3 -->
+      <div class="quizp-step" data-step="3" hidden>
+        <h3>3. O que é mais importante pra você agora?</h3>
+        <div class="quizp-options" data-question="3">
+          <button type="button" class="quizp-option" data-scores='{"racao":1}'>Nutrição adequada à idade e porte dele</button>
+          <button type="button" class="quizp-option" data-scores='{"brinquedos":1}'>Estímulo mental e desgaste de energia</button>
+          <button type="button" class="quizp-option" data-scores='{"remedios":1}'>Orientação e cuidado com a saúde</button>
+          <button type="button" class="quizp-option" data-scores='{"trajes":1}'>Conforto e estilo no dia a dia</button>
+        </div>
+      </div>
+
+      <!-- Pergunta 4 -->
+      <div class="quizp-step" data-step="4" hidden>
+        <h3>4. Qual frase combina mais com a situação atual?</h3>
+        <div class="quizp-options" data-question="4">
+          <button type="button" class="quizp-option" data-scores='{"racao":1}'>"Preciso repor o pote de comida dele"</button>
+          <button type="button" class="quizp-option" data-scores='{"brinquedos":1}'>"Ele fica sozinho em casa e precisa se distrair"</button>
+          <button type="button" class="quizp-option" data-scores='{"remedios":1}'>"Notei algo diferente na saúde dele"</button>
+          <button type="button" class="quizp-option" data-scores='{"trajes":1}'>"Quero ele confortável e protegido lá fora"</button>
+        </div>
+      </div>
+
+      <!-- Resultado -->
+      <div class="quizp-step quizp-result" data-step="result" hidden>
+        <div class="quizp-result-icon" id="quizpResultIcon">🐾</div>
+        <h3 id="quizpResultTitle">Recomendação</h3>
+        <p id="quizpResultText"></p>
+        <div class="quizp-result-actions">
+          <button type="button" class="btn primary" id="quizpGoProdutos">Ver produtos recomendados</button>
+          <button type="button" class="btn quizp-restart" id="quizpRestart">Refazer o quiz</button>
+        </div>
+        <div class="quizp-recommended" id="quizpRecommended" aria-live="polite"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<main class="catalogo" id="produtos">
+  <div class="catalogo-heading">
+    <div>
+      <p class="eyebrow">Seleção PetCharm</p>
+      <h1>Produtos para cuidar, brincar e mimar</h1>
+      <p>Escolha um item e monte seu carrinho. Substitua as imagens na pasta <strong>Produtos/imagens</strong>.</p>
+    </div>
+    <button class="cart-toggle" id="cartToggle" type="button" aria-expanded="false">🛒 Carrinho <span id="cartCount">0</span></button>
+  </div>
+
+  <div class="catalogo-layout">
+    <section class="product-grid" aria-label="Catálogo de produtos">
+      <article class="product-card" data-categoria="racao" data-id="racao-premium" data-nome="Ração Premium (Grande e médio)" data-preco="89.90"><img src="imagens/produto-racao-grande.jpg" alt="Pacote de ração premium para cães" /><div class="product-info"><span class="product-category">Alimentação</span><h2>Ração Premium (Grande e médio)</h2><p>Nutrição equilibrada para o seu pet de porte grande ou médio no dia a dia.</p><strong>R$ 89,90</strong><button class="add-cart" type="button">Adicionar ao carrinho</button></div></article>
+    <article class="product-card" data-categoria="racao" data-id="racao-premium-pequena" data-nome="Ração Premium" data-preco="89.90"><img src="imagens/produto-racao.jpg" alt="Pacote de ração premium para cães" /><div class="product-info"><span class="product-category">Alimentação</span><h2>Ração Premium</h2><p>Nutrição equilibrada para o dia a dia.</p><strong>R$ 49,90</strong><button class="add-cart" type="button">Adicionar ao carrinho</button></div></article>
+      <article class="product-card" data-categoria="racao" data-id="petisco-natural" data-nome="Petisco Natural" data-preco="24.90"><img src="imagens/produto-petisco.jpg" alt="Petiscos naturais para cães" /><div class="product-info"><span class="product-category">Alimentação</span><h2>Petisco Natural</h2><p>Recompensa saborosa para o treinamento.</p><strong>R$ 24,90</strong><button class="add-cart" type="button">Adicionar ao carrinho</button></div></article>
+      <article class="product-card" data-categoria="brinquedos" data-id="brinquedo-interativo" data-nome="Brinquedo Interativo" data-preco="39.90"><img src="imagens/produto-brinquedo.jpg" alt="Brinquedo interativo colorido para cachorro" /><div class="product-info"><span class="product-category">Diversão</span><h2>Brinquedo Interativo</h2><p>Estimula a mente e ajuda a gastar energia.</p><strong>R$ 39,90</strong><button class="add-cart" type="button">Adicionar ao carrinho</button></div></article>
+      <article class="product-card" data-categoria="brinquedos" data-id="bolinha-resistente" data-nome="Bola Resistente" data-preco="29.90"><img src="imagens/produto-bola.jpg" alt="Bola resistente para cachorro" /><div class="product-info"><span class="product-category">Diversão</span><h2>Bola Resistente</h2><p>Para brincadeiras dentro e fora de casa.</p><strong>R$ 29,90</strong><button class="add-cart" type="button">Adicionar ao carrinho</button></div></article>
+      <article class="product-card" data-categoria="remedios" data-id="kit-higiene" data-nome="Kit Higiene" data-preco="49.90"><img src="imagens/produto-higiene.jpg" alt="Kit de higiene para pets" /><div class="product-info"><span class="product-category">Cuidados</span><h2>Kit Higiene</h2><p>Cuidados essenciais para uma rotina saudável.</p><strong>R$ 113,90</strong><button class="add-cart" type="button">Adicionar ao carrinho</button></div></article>
+      <article class="product-card" data-categoria="trajes" data-id="capa-chuva" data-nome="Capa de Chuva" data-preco="59.90"><img src="imagens/produto-capa.jpg" alt="Capa de chuva para cachorro" /><div class="product-info"><span class="product-category">Proteção</span><h2>Capa de Chuva</h2><p>Conforto e proteção para os passeios.</p><strong>R$ 59,90</strong><button class="add-cart" type="button">Adicionar ao carrinho</button></div></article>
+    
+    </section>
+
+    <aside class="cart-panel" id="cartPanel" aria-label="Carrinho de compras">
+      <div class="cart-heading"><h2>Seu carrinho</h2><button id="cartClose" type="button" aria-label="Fechar carrinho">×</button></div>
+      <div id="cartItems" class="cart-items"><p class="cart-empty">Seu carrinho está vazio.</p></div>
+      <div class="cart-total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+      <button class="checkout-btn" type="button" id="checkoutButton">Finalizar pedido</button>
+      <p class="cart-feedback" id="cartFeedback" aria-live="polite"></p>
+    </aside>
+  </div>
+</main>
+<script src="quiz-produtos.js"></script>
+<script src="carrinho.js"></script>
+</body>
+</html>

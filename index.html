@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--
+  PetCharm - Banho & Tosa
+  Projeto didático do curso de Web Design.
+  Estrutura: header, hero, serviços (cards), sobre, contato (form), footer.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <!-- viewport torna o site responsivo no celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PetCharm - Banho & Tosa</title>
+  <meta name="description" content="Agendamento de banho e tosa." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="quiz.css" />
+
+</head>
+<body>
+
+  <!-- CABEÇALHO com navegação -->
+  <header class="site-header">
+    <div class="nav">
+      <div class="logo">🐶 PetCharm</div>
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+      <ul id="menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="Produtos/Produtos.html">Produtos</a></li>
+        <li><a href="Adoção/Index.html">Adoção</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO: primeira impressão do site -->
+  <section class="hero" id="inicio">
+    <!-- Coloque o vídeo em videos/petshop-fundo.mp4 e a capa em imagens/hero-petshop.jpg -->
+    <video class="hero-video" autoplay muted loop playsinline poster="imagens/" aria-hidden="true">
+      <source src="imagens/doguinho.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <!-- Alternativa: troque o vídeo por uma imagem usando imagens/hero-petshop.jpg -->
+      <img class="hero-image" src="imagens/1000683428.jpg" alt="Cachorro recebendo cuidados no pet shop" />
+    <h1>PetCharm - Banho & Tosa</h1>
+    <p>Agendamento de banho e tosa. Atendimento profissional, humano e de qualidade.</p>
+    <a href="#contato" class="btn">Agende sua avaliação</a>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS em formato de cards -->
+  <section id="servicos">
+    <div class="container">
+      <h2>Nossos Serviços</h2>
+      <p class="subtitle">Conheça o que oferecemos para você</p>
+      <div class="grid">
+        <article class="card">
+          <!-- Troque o caminho pela foto do serviço correspondente. -->
+          <img class="card-image" src="imagens/1000683427.jpg" alt="Atendimento personalizado para um cachorro" />
+          <div class="icon">🐶</div>
+          <h3>Atendimento personalizado</h3>
+          <p>Plano de cuidado individual conforme cada necessidade.</p>
+        </article>
+        <article class="card">
+          <img class="card-image" src="imagens/1000683426.jpg" alt="Profissional cuidando de um cachorro" />
+          <div class="icon">⭐</div>
+          <h3>Profissionais qualificados</h3>
+          <p>Equipe com formação especializada e experiência.</p>
+        </article>
+        <article class="card">
+          <img class="card-image" src="imagens/1000683435.jpg" alt="Cachorro limpo e feliz após o atendimento" />
+          <div class="icon">🏆</div>
+          <h3>Resultados comprovados</h3>
+          <p>Clientes satisfeitos e depoimentos reais.</p>
+        </article>
+        <article class="card">
+          <img class="card-image" src="imagens/1000683436.jpg" alt="Cachorro pronto para o horário marcado" />
+          <div class="icon">📅</div>
+          <h3>Horários flexíveis</h3>
+          <p>Atendimento que se encaixa na sua rotina.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" style="background:#fff;">
+    <div class="container">
+      <div class="sobre-media">
+        <img src="imagens/1000683439.jpg" alt="Equipe PetCharm com um cachorro" />
+      </div>
+      <h2>Sobre nós</h2>
+      <p class="subtitle" style="max-width:720px; margin-left:auto; margin-right:auto;">
+        Somos especialistas em pet, dedicados a oferecer a melhor
+        experiência. Trabalhamos com ética, transparência e foco em resultados.
+      </p>
+    </div>
+  </section>
+<section id="quiz">
+  <div class="container">
+    <h2>Qual serviço é ideal para o seu pet?</h2>
+    <p class="subtitle">Responda 4 perguntinhas rápidas e receba uma recomendação personalizada</p>
+
+    <div class="quiz-box" id="quizBox">
+
+      <!-- Barra de progresso -->
+      <div class="quiz-progress">
+        <div class="quiz-progress-bar" id="quizProgressBar"></div>
+      </div>
+      <p class="quiz-step-count" id="quizStepCount">Pergunta 1 de 4</p>
+
+      <!-- Pergunta 1 -->
+      <div class="quiz-step" data-step="1">
+        <h3>1. Como está o pelo do seu pet hoje?</h3>
+        <div class="quiz-options" data-question="1">
+          <button type="button" class="quiz-option" data-scores='{"banho":2}'>Limpo, só precisa de uma renovada</button>
+          <button type="button" class="quiz-option" data-scores='{"tosa":2}'>Com nós, muito comprido ou desalinhado</button>
+          <button type="button" class="quiz-option" data-scores='{"banho_tosa":2}'>Sujo e desalinhado ao mesmo tempo</button>
+          <button type="button" class="quiz-option" data-scores='{"hidratacao":2}'>Ressecado, opaco ou caindo muito</button>
+        </div>
+      </div>
+
+      <!-- Pergunta 2 -->
+      <div class="quiz-step" data-step="2" hidden>
+        <h3>2. Qual é o principal objetivo do atendimento?</h3>
+        <div class="quiz-options" data-question="2">
+          <button type="button" class="quiz-option" data-scores='{"banho":2}'>Higiene básica e cheirinho bom</button>
+          <button type="button" class="quiz-option" data-scores='{"tosa":2}'>Aparência: corte e estilo</button>
+          <button type="button" class="quiz-option" data-scores='{"banho_tosa":2}'>Cuidado completo, sem economizar</button>
+          <button type="button" class="quiz-option" data-scores='{"hidratacao":2}'>Recuperar a saúde do pelo e da pele</button>
+        </div>
+      </div>
+
+      <!-- Pergunta 3 -->
+      <div class="quiz-step" data-step="3" hidden>
+        <h3>3. Com que frequência seu pet costuma tomar banho?</h3>
+        <div class="quiz-options" data-question="3">
+          <button type="button" class="quiz-option" data-scores='{"banho":1}'>Toda semana, é rotina</button>
+          <button type="button" class="quiz-option" data-scores='{"tosa":1}'>Raramente, geralmente só corto o pelo</button>
+          <button type="button" class="quiz-option" data-scores='{"banho_tosa":1}'>Sempre faço os dois juntos</button>
+          <button type="button" class="quiz-option" data-scores='{"hidratacao":1}'>Meu pet tem pele sensível ou alérgica</button>
+        </div>
+      </div>
+
+      <!-- Pergunta 4 -->
+      <div class="quiz-step" data-step="4" hidden>
+        <h3>4. Qual dessas frases combina mais com o momento do seu pet?</h3>
+        <div class="quiz-options" data-question="4">
+          <button type="button" class="quiz-option" data-scores='{"banho":1}'>É só a rotina normal da semana</button>
+          <button type="button" class="quiz-option" data-scores='{"tosa":1}'>Tem um evento ou foto especial chegando</button>
+          <button type="button" class="quiz-option" data-scores='{"banho_tosa":1}'>Quero o pacote completo, sem enrolação</button>
+          <button type="button" class="quiz-option" data-scores='{"hidratacao":1}'>Está com coceira, caspa ou irritação</button>
+        </div>
+      </div>
+
+      <!-- Resultado -->
+      <div class="quiz-step quiz-result" data-step="result" hidden>
+        <div class="quiz-result-icon" id="quizResultIcon">🐾</div>
+        <h3 id="quizResultTitle">Recomendação</h3>
+        <p id="quizResultText"></p>
+        <div class="quiz-result-actions">
+          <button type="button" class="btn primary" id="quizGoContact">Agendar esse serviço</button>
+          <button type="button" class="btn quiz-restart" id="quizRestart">Refazer o quiz</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+  <!-- CONTATO com formulário -->
+  <section id="contato">
+    <div class="container">
+      <h2>Fale conosco</h2>
+      <p class="subtitle">Preencha e retornaremos em breve</p>
+      <form class="contact" id="formContato" novalidate>
+        <div>
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" required placeholder="Seu nome" />
+        </div>
+        <div>
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required placeholder="voce@email.com" />
+        </div>
+        <div>
+          <label for="telefone">Telefone / WhatsApp</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" />
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="petNome">Nome do pet</label>
+            <input type="text" id="petNome" name="petNome" required placeholder="Ex.: Mel" />
+          </div>
+          <div>
+            <label for="petRaca">Raça</label>
+            <input type="text" id="petRaca" name="petRaca" required placeholder="Ex.: Shih-tzu" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="servico">Serviço</label>
+            <select id="servico" name="servico" required>
+              <option value="">Escolha um serviço</option>
+              <option value="Banho">Banho</option>
+              <option value="Tosa higiênica">Tosa higiênica</option>
+              <option value="Banho e tosa">Banho e tosa</option>
+              <option value="Hidratação">Hidratação</option>
+            </select>
+          </div>
+          <div>
+            <label for="data">Data preferida</label>
+            <input type="date" id="data" name="data" required />
+          </div>
+        </div>
+        <div>
+          <label for="horario">Horário disponível</label>
+          <select id="horario" name="horario" required disabled>
+            <option value="">Escolha primeiro uma data</option>
+          </select>
+        </div>
+        <div>
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Como podemos ajudar?"></textarea>
+        </div>
+        <button type="submit" class="btn primary">Enviar mensagem</button>
+        <div class="mensagem-feedback" id="feedback"></div>
+        <div class="lembrete" id="lembrete" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© <span id="ano"></span> PetCharm - Banho & Tosa — Todos os direitos reservados.</p>
+    <p>Projeto educacional do curso de Web Design.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>
