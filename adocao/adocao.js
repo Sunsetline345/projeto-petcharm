@@ -126,14 +126,21 @@ async function consultarRacas(nome = '') {
 
 function buscar() {
   const nome = buscaRaca.value.trim();
+
   if (nome.length < 2) {
-    mostrarStatus('Digite pelo menos 2 letras para pesquisar uma raça.', 'error');
+    mostrarStatus(
+      'Digite o nome de uma raça ou pelo menos duas letras e clique em Pesquisar.',
+      'error'
+    );
+
     buscaRaca.focus();
     return;
   }
+
   ultimaBusca = nome;
   consultarRacas(nome);
 }
+
 
 botaoBuscar.addEventListener('click', buscar);
 buscaRaca.addEventListener('keydown', evento => {
@@ -144,4 +151,5 @@ seletorRaca.addEventListener('change', () => {
   if (raca) exibirRaca(raca);
 });
 
-consultarRacas();
+mostrarStatus('Digite o nome de uma raça ou pelo menos duas letras e clique em Pesquisar.'
+);
